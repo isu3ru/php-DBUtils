@@ -9,25 +9,23 @@ class DButils {
 
     var $conn;
     var $hostname;
-    var $port;
     var $user;
     var $pass;
 
     /**
      * Create a new instance of DBUtils class<br />
      * <p>Example usage: </p>
-     * <code>$dbutils = new dbutils('localhost', '3306', 'root', 'mdcc');</code>
+     * <code>$dbutils = new dbutils('localhost', 'root', 'mdcc');</code>
      */
-    public function __construct($hostname, $port, $user, $pass) {
+    public function __construct($hostname, $user, $pass) {
         $this->hostname = $hostname;
-        $this->port = $port;
         $this->user = $user;
         $this->pass = $pass;
         $this->conn = $this->_connect($this->user, $this->pass, $this->hostname, $this->port);
     }
 
-    private function _connect($user, $pass, $host = 'localhost', $port = 3306) {
-        return mysql_connect($host + ":" + $port, $user, $pass);
+    private function _connect($host, $user, $pass) {
+        return mysql_connect($host, $user, $pass);
     }
 
     public function realEscape($val) {
