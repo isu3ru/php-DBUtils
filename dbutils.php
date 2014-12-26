@@ -26,7 +26,7 @@ class DButils {
         $this->conn = $this->_connect($this->user, $this->pass, $this->hostname, $this->port);
     }
 
-    private function _connect($user, $pass, $host = 'localhost', $p = 3306) {
+    private function _connect($user, $pass, $host = 'localhost', $port = 3306) {
         return mysql_connect($host + ":" + $port, $user, $pass);
     }
 
