@@ -21,7 +21,7 @@ class DButils {
         $this->hostname = $hostname;
         $this->user = $user;
         $this->pass = $pass;
-        $this->conn = $this->_connect($this->user, $this->pass, $this->hostname, $this->port);
+        $this->conn = $this->_connect($this->user, $this->pass, $this->hostname);
     }
 
     private function _connect($host, $user, $pass) {
