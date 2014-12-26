@@ -175,18 +175,16 @@ class DButils {
         
         $fvals = array();
         foreach (array_values($data) as $fv) {
-            if (is_string($fv)) {
-                $fvals[] = sprintf("'%s'", $this->realEscape($fv));
-            }
-            if (is_null($fv)) {
-                $fvals[] = "NULL";
-            }
             if (is_numeric($fv)) {
                 if (is_float($fv)) {
                     $fvals[] = sprintf("%f", $fv);
                 } else {
                     $fvals[] = sprintf("%d", $fv);
                 }
+            } else if (is_null($fv)) {
+                $fvals[] = "NULL";
+            } else if (is_string($fv)) {
+                $fvals[] = sprintf("'%s'", $this->realEscape($fv));
             }
         }
 
