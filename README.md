@@ -13,9 +13,9 @@
 9. `public function insert($table, $data)` - Create MySQL INSERT statement by providing the table name and an associative array containing fields and values
 
 ###Example Usage
-  echo $dbutils->insert("mb_details", array(
-    'brID' => 1,
-    'rsCode' => 16515.1546,
-    'desc' => "seyhgseh serhgrt'i'usehrig sergseg",
-    'other' => NULL
-  ));
+  `echo $dbutils->insert("mb_details", array(`
+  `  'brID' => 1,`
+  `  'rsCode' => 16515.1546,`
+  `  'desc' => "seyhgseh serhgrt'i'usehrig sergseg",`
+  `  'other' => NULL`
+  `));`
